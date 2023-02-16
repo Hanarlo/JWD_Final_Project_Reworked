@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fund bill</title>
+</head>
+<body>
+ <form th:action="@{/fund/{id}(id=${id})}" method="post">
+     <input id="amount" name="amount" placeholder="Input amount" pattern="[1-9]+">
+    <input type="submit" value="Fund!">
+     <div th:if="${param.error}" style="color: red">
+         Write the replenishment amount
+     </div>
+ </form>
+</body>
+</html>

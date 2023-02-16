@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restore bill</title>
+</head>
+<body>
+<h4>Unblock bill</h4>
+<form action = "/admin/unblock" method = "post">
+    <input name="bill" placeholder="Bill name" pattern="[a-zA-Z]+">
+    <input name="username" placeholder="Username" pattern="[a-zA-Z]+">
+    <button>Unblock bill</button>
+</form>
+<div th:if="${param.billError}" style="color: red">
+    Bill with this name was not found!
+</div>
+<div th:if="${param.usernameError}" style="color: red">
+    User with this username was not found!
+</div>
+</body>
+</html>

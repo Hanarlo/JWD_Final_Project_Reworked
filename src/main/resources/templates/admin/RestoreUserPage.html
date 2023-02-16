@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restore user</title>
+</head>
+<body>
+<h4>Restore user</h4>
+<form action="/admin/restore" method="post">
+    <input name="username" placeholder="Username" pattern="[a-zA-Z]+">
+    <button>Restore user</button>
+</form>
+<div th:if="${param.error}" style="color: red">
+    User with this username was not found!
+</div>
+
+</body>
+</html>

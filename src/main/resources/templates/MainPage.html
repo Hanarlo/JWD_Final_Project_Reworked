@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+<h1 th:text= "${'Welcome, ' + user.username}"></h1>
+  <table>
+    <tr><h4>Your bills</h4></tr>
+    <form>
+    <tr th:each="bill : ${bills}">
+      <div>
+        <label th:for="${bill.id}" th:text="${bill.name}">Bill name</label>
+        <label th:for="${bill.id}" th:text="${bill.balance}">Bill balance</label>
+        <label th:if="${bill.blocked}" th:for="${bill.id}">BLOCKED</label>
+        <input th:if="${!bill.blocked}" type="radio" th:id="${bill.id}" name="id" th:value="${bill.id}"/>
+      </div>
+    </tr>
+      <button formaction="/block" type="submit">Block bill</button>
+      <button type="submit" formaction="/payment">Make payment</button>
+      <button type="submit" formaction="/fund">Fund bill</button>
+    </form>
+    </tr>
+  </table>
+<br>
+<h4>History</h4>
+<form action="/history" method="get">
+  <button>Show history</button>
+</form>
+<br>
+<h4>Change username</h4>
+<form action="/change_username" method="get">
+  <button>Change username page</button>
+</form>
+<br>
+<h4>Change password</h4>
+<form action="/change_password" method="get">
+  <button>Change password page</button>
+</form>
+<br>
+<h4>Сreate bill</h4>
+<form action="/create" method="get">
+  <button>Create bill page</button>
+</form>
+<br>
+<form action="/logout" method="get">
+  <button>Logout</button>
+</form>
+<br>
+<form action="/delete" method="get">
+<button>Delete account</button>
+</form>
+</body>
+</html>

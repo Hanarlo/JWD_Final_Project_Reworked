@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/payment/{id}(id = ${id})}" method="post" th:object="${payment}">
+    <input id="receiverLogin" name="receiverLogin"  th:field="*{receiverLogin}"  placeholder="Receiver login" pattern="[a-zA-Z]+">
+    <input id="receiverBillName" name="receiverBillName"  th:field="*{receiverBillName}"  placeholder="Receiver Bill name" pattern="[a-zA-Z]+">
+    <input id="amount" name="amount"  th:field="*{amount}"  placeholder="amount" pattern="[1-9][0-9]+">
+    <input id="name" name="name"  th:field="*{name}"  placeholder="name (optional)">
+    <button>Make payment!</button>
+    <div style="color: red" th:if="${#fields.hasErrors('receiverLogin')}" th:errors="*{receiverLogin}">error</div>
+    <div style="color: red" th:if="${#fields.hasErrors('receiverBillName')}" th:errors="*{receiverBillName}">error</div>
+    <div style="color: red" th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}">error</div>
+    <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">error</div>
+</form>
+</body>
+</html>

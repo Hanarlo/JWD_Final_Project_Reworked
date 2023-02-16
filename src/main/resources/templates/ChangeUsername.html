@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Username change</title>
+</head>
+<body>
+<h4>Change username</h4>
+<form action="/change_username" method="post">
+    <input name="username" placeholder="username" pattern="[a-zA-Z]+">
+    <button>Change!</button>
+
+</form>
+<h4 th:if="${error != null}" th:text="${error}" style="color: red"></h4>
+</body>
+</html>

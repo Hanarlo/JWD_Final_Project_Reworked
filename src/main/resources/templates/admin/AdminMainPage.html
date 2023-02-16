@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+</head>
+<body>
+<h1 th:text= "${'Welcome, ' + user.username}"></h1>
+
+<h4>Unblock bill</h4>
+<form action = "/admin/unblock" method = "get">
+    <button>Unblock bill page</button>
+</form>
+<br>
+<h4>Restore user</h4>
+<form action="/admin/restore" method="get">
+    <button>Restore user page</button>
+</form>
+<br>
+<form action="/logout" method="get">
+    <button>Logout</button>
+</form>
+</body>
+</html>

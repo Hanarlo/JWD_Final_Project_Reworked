@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bill create</title>
+</head>
+<body>
+<h4>Сreate bill</h4>
+<form th:action="@{/create}" th:method="post" th:object="${bill}">
+    <input id="name" name="bill_name" th:field="*{name}" placeholder="Bill name" pattern="[a-zA-Z]+">
+    <button>Create!</button>
+    <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+</form>
+</body>
+</html>

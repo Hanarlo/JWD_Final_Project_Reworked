@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>History</title>
+</head>
+<body>
+<table>
+    <tr><h2>Incoming history</h2></tr>
+    <tr th:each="incoming : ${incomingHistory}">
+        <p th:text="${incoming}"></p>
+    </tr>
+</table>
+<br>
+    <table>
+        <tr><h2>Outgoing history</h2></tr>
+        <tr th:each="outgoing : ${outgoingHistory}">
+            <p th:text="${outgoing}"></p>
+        </tr>
+    </table>
+</body>
+</html>
