@@ -46,25 +46,8 @@ public class SecurityConfig {
                 .defaultSuccessUrl("/main", true)
                 .failureUrl("/auth/login?error")
                 .and()
-                .csrf().disable()
                 .logout().logoutUrl("/logout").logoutSuccessUrl("/auth/login") ;
 
-//                .authorizeHttpRequests()
-//                .requestMatchers(HttpMethod.DELETE)
-//                .hasRole("ADMIN")
-//                .requestMatchers("/admin/**")
-//                .hasAnyRole("ADMIN")
-//                .requestMatchers("/user/**")
-//                .hasAnyRole("USER", "ADMIN")
-//                .requestMatchers("/login/**")
-//                .anonymous()
-//                .anyRequest()
-//                .authenticated()
-//                .and()
-//                .httpBasic()
-//                .and()
-//                .sessionManagement()
-//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         return http.build();
     }

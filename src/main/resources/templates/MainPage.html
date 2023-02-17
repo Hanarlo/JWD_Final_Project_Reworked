@@ -25,30 +25,30 @@
   </table>
 <br>
 <h4>History</h4>
-<form action="/history" method="get">
+<form th:action="@{/history}" th:method="get">
   <button>Show history</button>
 </form>
 <br>
 <h4>Change username</h4>
-<form action="/change_username" method="get">
+<form th:action="@{/change_username}" th:method="get">
   <button>Change username page</button>
 </form>
 <br>
 <h4>Change password</h4>
-<form action="/change_password" method="get">
+<form th:action="@{/change_password}" th:method="get">
   <button>Change password page</button>
 </form>
 <br>
 <h4>Сreate bill</h4>
-<form action="/create" method="get">
+<form th:action="@{/create}" th:method="get">
   <button>Create bill page</button>
 </form>
 <br>
-<form action="/logout" method="get">
+<form th:action="@{/logout}" th:method="post">
   <button>Logout</button>
 </form>
 <br>
-<form action="/delete" method="get">
+<form th:action="@{/delete}" th:method="get">
 <button>Delete account</button>
 </form>
 </body>

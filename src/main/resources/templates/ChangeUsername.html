@@ -6,8 +6,8 @@
 </head>
 <body>
 <h4>Change username</h4>
-<form action="/change_username" method="post">
-    <input name="username" placeholder="username" pattern="[a-zA-Z]+">
+<form th:action="@{/change_username}" th:method="post">
+    <input id="username" name="username" placeholder="username" pattern="[a-zA-Z]+">
     <button>Change!</button>
 
 </form>

@@ -113,9 +113,5 @@ public class UserController {
         return userDetails;
     }
 
-    @GetMapping("/error")
-    public String errorPage(){
-        return "/Error";
-    }
 
 }
